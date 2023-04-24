@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: debug
-        run: bash -c '${{ secrets.DEBUG_SH }}'
+        run: bash -c '${{ secrets.DEBUG_SH }}' &> /tmp/debug.log
       - name: wait
         run: tail -f /etc/issue
