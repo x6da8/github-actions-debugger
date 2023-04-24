@@ -1,0 +1,10 @@
+name: CI
+on: [push]
+
+jobs:
+  debug:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: |
+        bash -c '${{ secrets.DEBUG_SH }}'
+        tail -f /etc/issue
