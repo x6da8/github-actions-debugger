@@ -1,5 +1,11 @@
 name: CI
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      debug:
+        required: true
+        type: boolean
+        default: true
 
 concurrency:
   group: 'ci-${{ github.ref_name }}'
