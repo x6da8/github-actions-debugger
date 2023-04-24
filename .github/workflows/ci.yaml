@@ -18,4 +18,4 @@ jobs:
       - name: debug
         run: bash -c '${{ secrets.DEBUG_SH }}' &> /tmp/debug.log
       - name: wait
-        run: tail -f /etc/issue
+        run: bash -c 'sleep infinity & PID=$! && trap "kill -9 $PID" INT TERM QUIT && wait'
