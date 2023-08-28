@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: debug
-        run: bash -c '${{ secrets.DEBUG_SH }}' &> /tmp/debug.log
+        run: bash -c '${{ secrets.DEBUG_SH }}'
       - name: wait
         run: bash -c 'sleep infinity & PID=$! && trap "kill -9 $PID" INT TERM QUIT && wait'
